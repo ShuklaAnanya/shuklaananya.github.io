@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Visiting Scholar, <a href='https://www.microsoft.com/en-us/research/lab/microsoft-research-india/'>Microsoft Research</a>; Undergraduate Student, <a href='www.plaksha.edu.in'>Plaksha University</a>
+subtitle: Visiting Scholar, <a href='https://www.microsoft.com/en-us/research/lab/microsoft-research-india/'>Microsoft Research</a>; Undergraduate Student, <a href='https://plaksha.edu.in'>Plaksha University</a>
 # subtitle: <a href='#'>Visiting Scholar at Microsoft Research</a>. Address. Contacts. Motto. Etc.
 
 profile:
