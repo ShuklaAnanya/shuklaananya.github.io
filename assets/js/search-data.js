@@ -390,12 +390,10 @@ ninja.data = [{
           section: "News",},{id: "news-headed-to-daejeon-republic-of-korea-to-present-our-miccai-2025-paper-poster-session-2",
           title: 'Headed to Daejeon, Republic of Korea 🇰🇷 to present our MICCAI 2025 Paper...',
           description: "",
-          section: "News",},{id: "news-announcement-2",
-          title: 'Announcement_2',
+          section: "News",},{id: "news-our-work-on-guideai-a-cognition-aware-adaptive-learning-framework-using-multimodal-llms-has-been-accepted-at-acm-iui-2026",
+          title: 'Our work on GuideAI, a cognition-aware adaptive learning framework using multimodal LLMs, has...',
           description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
-            },},{id: "news-our-paper-on-bone-suppression-in-cxrs-for-pneumothorax-segmentation-has-been-accepted-to-ieee-isbi-2026-main-track",
+          section: "News",},{id: "news-our-paper-on-bone-suppression-in-cxrs-for-pneumothorax-segmentation-has-been-accepted-to-ieee-isbi-2026-main-track",
           title: 'Our paper on bone suppression in CXRs for pneumothorax segmentation has been accepted...',
           description: "",
           section: "News",},{id: "projects-project-1",
