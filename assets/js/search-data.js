@@ -461,13 +461,6 @@ ninja.data = [{
           window.open("mailto:%61%6E%61%6E%79%61.%73%68%75%6B%6C%61@%70%6C%61%6B%73%68%61.%65%64%75.%69%6E", "_blank");
         },
       },{
-        id: 'social-scholar',
-        title: 'Google Scholar',
-        section: 'Socials',
-        handler: () => {
-          window.open("https://scholar.google.com/citations?user=YPeRWRgAAAAJ", "_blank");
-        },
-      },{
         id: 'social-github',
         title: 'GitHub',
         section: 'Socials',
@@ -480,6 +473,13 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://www.linkedin.com/in/-ananya-shukla", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=YPeRWRgAAAAJ", "_blank");
         },
       },{
       id: 'light-theme',
