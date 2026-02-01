@@ -4,14 +4,14 @@ const ninja = document.querySelector('ninja-keys');
 // add the home and posts menu items
 ninja.data = [{
     id: "nav-about",
-    title: "about",
+    title: "About",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
   },{id: "nav-publications",
-          title: "publications",
-          description: "Publications to be updated!",
+          title: "Publications",
+          description: "Publications by categories in reversed chronological order.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
@@ -384,16 +384,19 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+            },},{id: "news-our-paper-on-spatial-prior-guided-neonatal-hie-lesion-segmentation-has-been-accepted-to-miccai-2025-main-track",
+          title: 'Our paper on spatial prior-guided neonatal HIE lesion segmentation has been accepted to...',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+          section: "News",},{id: "news-headed-to-daejeon-republic-of-korea-to-present-our-miccai-2025-paper-poster-session-2",
+          title: 'Headed to Daejeon, Republic of Korea 🇰🇷 to present our MICCAI 2025 Paper...',
+          description: "",
+          section: "News",},{id: "news-announcement-2",
+          title: 'Announcement_2',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+            },},{id: "news-our-paper-on-bone-suppression-in-cxrs-for-pneumothorax-segmentation-has-been-accepted-to-ieee-isbi-2026-main-track",
+          title: 'Our paper on bone suppression in CXRs for pneumothorax segmentation has been accepted...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
