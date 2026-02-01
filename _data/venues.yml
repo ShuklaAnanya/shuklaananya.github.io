@@ -1,15 +1,19 @@
 "ISBI 2026":
   url: https://biomedicalimaging.org/2026/
   color: "#4c96b6"
+  text_color: "#ffffff"
 
 "IUI 2026":
   url: https://iui.acm.org/2026/
   color: "#4c96b6"
+  text_color: "#ffffff"
 
 "MICCAI 2025":
   url: https://conferences.miccai.org/2025/en/
   color: "#4c96b6"
+  text_color: "#ffffff"
 
 "bioRxiv":
   url: https://www.biorxiv.org/
   color: "#4c96b6"
+  text_color: "#ffffff"
