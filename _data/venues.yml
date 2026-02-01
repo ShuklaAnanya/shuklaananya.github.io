@@ -1,9 +1,15 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+"ISBI 2026":
+  url: https://biomedicalimaging.org/2026/
+  color: "#6f42c1"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"IUI 2026":
+  url: https://iui.acm.org/2026/
+  color: "#e83e8c"
 
-"Vision":
-  color: "#009f36"
+"MICCAI 2025":
+  url: https://conferences.miccai.org/2025/en/
+  color: "#17a2b8"
+
+"bioRxiv":
+  url: https://www.biorxiv.org/
+  color: "#bd2736"
