@@ -1,0 +1,214 @@
+---
+---
+{% assign abstract_id = 'publication-' | append: entry.key | append: '-abstract' %}
+{% assign award_id = 'publication-' | append: entry.key | append: '-award' %}
+{% assign bibtex_id = 'publication-' | append: entry.key | append: '-bibtex' %}
+
+<article class="publication-card{% if entry.preview %} publication-card--with-preview{% endif %}" aria-labelledby="publication-{{ entry.key }}-title">
+  {% if site.enable_publication_thumbnails and entry.preview %}
+    <div class="publication-card__preview">
+      {% if entry.preview contains '://' %}
+        <img src="{{ entry.preview }}" alt="" loading="lazy">
+      {% else %}
+        {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
+        {%
+          include figure.liquid
+          loading="lazy"
+          path=entry_path
+          sizes="(max-width: 576px) 100vw, 180px"
+          class="publication-card__preview-image"
+          alt=""
+        %}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="publication-card__content">
+    <div class="publication-card__meta">
+      {% if entry.abbr %}
+        {% assign venue_style = '' %}
+        {% if site.data.venues[entry.abbr].color != blank %}
+          {% assign venue_style = venue_style | append: 'background-color:' | append: site.data.venues[entry.abbr].color | append: ';' %}
+        {% endif %}
+        {% if site.data.venues[entry.abbr].text_color != blank %}
+          {% assign venue_style = venue_style | append: 'color:' | append: site.data.venues[entry.abbr].text_color | append: ';' %}
+        {% endif %}
+        {% if site.data.venues[entry.abbr].url %}
+          <a class="publication-venue" href="{{ site.data.venues[entry.abbr].url }}" style="{{ venue_style }}">
+            {{- entry.abbr -}}
+          </a>
+        {% else %}
+          <span class="publication-venue" style="{{ venue_style }}">{{ entry.abbr }}</span>
+        {% endif %}
+      {% endif %}
+
+      {% if entry.award %}
+        <button
+          class="publication-distinction"
+          type="button"
+          data-publication-toggle
+          aria-controls="{{ award_id }}"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-star" aria-hidden="true"></i>
+          <span>
+            {%- if entry.award_name %}{{ entry.award_name }}{% else %}Awarded{% endif -%}
+          </span>
+          <i class="fa-solid fa-chevron-down publication-toggle-icon" aria-hidden="true"></i>
+        </button>
+      {% endif %}
+    </div>
+
+    <h3 id="publication-{{ entry.key }}-title" class="publication-card__title">{{ entry.title }}</h3>
+
+    <div class="publication-card__authors">
+      {% assign author_array_size = entry.author_array | size %}
+      {%- for author in entry.author_array -%}
+        {% assign author_is_self = false %}
+        {% assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' %}
+        {% assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' %}
+        {% if site.scholar.last_name contains author_last_name and site.scholar.first_name contains author.first %}
+          {% assign author_is_self = true %}
+        {% endif %}
+        {% assign coauthor_url = null %}
+        {% assign clean_last_name = author_last_name | downcase | remove_accents %}
+        {% if site.data.coauthors[clean_last_name] %}
+          {% for coauthor in site.data.coauthors[clean_last_name] %}
+            {% if coauthor.firstname contains author.first %}
+              {% assign coauthor_url = coauthor.url %}
+              {% break %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+        {%- unless forloop.first -%}
+          {% if forloop.last %} and {% else %}, {% endif %}
+        {%- endunless -%}
+        {% if author_is_self %}
+          <strong>
+            {{- author.first }}
+            {{ author_last_html -}}
+          </strong>
+        {% elsif coauthor_url %}
+          <a href="{{ coauthor_url }}">
+            {{- author.first }}
+            {{ author_last_html -}}
+          </a>
+        {% else %}
+          {{- author.first }}
+          {{ author_last_html -}}
+        {% endif %}
+      {%- endfor -%}
+    </div>
+
+    {% assign proceedings = 'inproceedings,incollection' | split: ',' %}
+    {% assign thesis = 'thesis,mastersthesis,phdthesis' | split: ',' %}
+    <div class="publication-card__venue-line">
+      {% if entry.type == 'article' %}
+        <em>{{ entry.journal }}</em>
+      {% elsif proceedings contains entry.type %}
+        <em>{{ entry.booktitle }}</em>
+      {% elsif thesis contains entry.type %}
+        <em>{{ entry.school }}</em>
+      {% endif %}
+      {% if entry.year %}
+        <span aria-hidden="true"> · </span>{{ entry.year }}
+      {% endif %}
+      {% if entry.note %}
+        <span aria-hidden="true"> · </span>{{ entry.note }}
+      {% endif %}
+    </div>
+
+    {% if entry.topics %}
+      {% assign publication_topics = entry.topics | split: ';' %}
+      <ul class="publication-topics" aria-label="Research topics">
+        {% for topic in publication_topics %}
+          <li>{{ topic | strip }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <div class="publication-actions" aria-label="Publication links and details">
+      {% if entry.abstract %}
+        <button type="button" data-publication-toggle aria-controls="{{ abstract_id }}" aria-expanded="false">
+          <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+          <span>Abstract</span>
+          <i class="fa-solid fa-chevron-down publication-toggle-icon" aria-hidden="true"></i>
+        </button>
+      {% endif %}
+      {% if entry.pdf %}
+        <a href="{% if entry.pdf contains '://' %}{{ entry.pdf }}{% else %}{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}{% endif %}">
+          <i class="fa-regular fa-file-pdf" aria-hidden="true"></i>
+          <span>PDF</span>
+        </a>
+      {% endif %}
+      {% if entry.doi %}
+        <a href="https://doi.org/{{ entry.doi }}">
+          <i class="fa-solid fa-link" aria-hidden="true"></i>
+          <span>DOI</span>
+        </a>
+      {% endif %}
+      {% if entry.arxiv %}
+        <a href="https://arxiv.org/abs/{{ entry.arxiv }}">
+          <i class="ai ai-arxiv" aria-hidden="true"></i>
+          <span>arXiv</span>
+        </a>
+      {% endif %}
+      {% if entry.code %}
+        <a href="{{ entry.code }}">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          <span>Code</span>
+        </a>
+      {% endif %}
+      {% if entry.website %}
+        <a href="{{ entry.website }}">
+          <i class="fa-solid fa-globe" aria-hidden="true"></i>
+          <span>Project</span>
+        </a>
+      {% endif %}
+      {% if entry.video %}
+        <a href="{{ entry.video }}">
+          <i class="fa-solid fa-play" aria-hidden="true"></i>
+          <span>Video</span>
+        </a>
+      {% endif %}
+      {% if entry.poster %}
+        <a href="{% if entry.poster contains '://' %}{{ entry.poster }}{% else %}{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}{% endif %}">
+          <i class="fa-regular fa-image" aria-hidden="true"></i>
+          <span>Poster</span>
+        </a>
+      {% endif %}
+      {% if entry.slides %}
+        <a href="{% if entry.slides contains '://' %}{{ entry.slides }}{% else %}{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}{% endif %}">
+          <i class="fa-regular fa-images" aria-hidden="true"></i>
+          <span>Slides</span>
+        </a>
+      {% endif %}
+      {% if entry.bibtex_show %}
+        <button type="button" data-publication-toggle aria-controls="{{ bibtex_id }}" aria-expanded="false">
+          <i class="fa-solid fa-quote-right" aria-hidden="true"></i>
+          <span>BibTeX</span>
+          <i class="fa-solid fa-chevron-down publication-toggle-icon" aria-hidden="true"></i>
+        </button>
+      {% endif %}
+    </div>
+
+    {% if entry.award %}
+      <div id="{{ award_id }}" class="publication-details publication-details--award" hidden>
+        {{ entry.award | markdownify }}
+      </div>
+    {% endif %}
+    {% if entry.abstract %}
+      <div id="{{ abstract_id }}" class="publication-details publication-details--abstract" hidden>
+        <p>{{ entry.abstract }}</p>
+      </div>
+    {% endif %}
+    {% if entry.bibtex_show %}
+      <div id="{{ bibtex_id }}" class="publication-details publication-details--bibtex" hidden>
+        {% highlight bibtex %}
+        {{- entry.bibtex | hideCustomBibtex -}}
+        {% endhighlight %}
+      </div>
+    {% endif %}
+  </div>
+</article>

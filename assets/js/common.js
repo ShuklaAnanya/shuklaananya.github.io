@@ -1,19 +1,21 @@
 $(document).ready(function () {
-  // add toggle functionality to abstract, award and bibtex buttons
-  $("a.abstract").click(function () {
-    $(this).parent().parent().find(".abstract.hidden").toggleClass("open");
-    $(this).parent().parent().find(".award.hidden.open").toggleClass("open");
-    $(this).parent().parent().find(".bibtex.hidden.open").toggleClass("open");
-  });
-  $("a.award").click(function () {
-    $(this).parent().parent().find(".abstract.hidden.open").toggleClass("open");
-    $(this).parent().parent().find(".award.hidden").toggleClass("open");
-    $(this).parent().parent().find(".bibtex.hidden.open").toggleClass("open");
-  });
-  $("a.bibtex").click(function () {
-    $(this).parent().parent().find(".abstract.hidden.open").toggleClass("open");
-    $(this).parent().parent().find(".award.hidden.open").toggleClass("open");
-    $(this).parent().parent().find(".bibtex.hidden").toggleClass("open");
+  const publicationCount = $(".publications ol.bibliography > li").length;
+  $("[data-publication-count]").text(publicationCount);
+
+  $("[data-publication-toggle]").click(function () {
+    const button = $(this);
+    const card = button.closest(".publication-card");
+    const targetId = button.attr("aria-controls");
+    const target = document.getElementById(targetId);
+    const shouldOpen = button.attr("aria-expanded") !== "true";
+
+    card.find("[data-publication-toggle]").attr("aria-expanded", "false");
+    card.find(".publication-details").prop("hidden", true);
+
+    if (shouldOpen && target) {
+      button.attr("aria-expanded", "true");
+      target.hidden = false;
+    }
   });
   $("a").removeClass("waves-effect waves-light");
 

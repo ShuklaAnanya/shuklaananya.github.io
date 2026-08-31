@@ -4,7 +4,7 @@
 
 title: blank # the website title (if blank, full name will be used instead)
 first_name: Ananya
-middle_name: 
+middle_name:
 last_name: Shukla
 contact_note: # >
   # You can even add a little note about which of these is the best way to reach you.
@@ -288,7 +288,7 @@ scholar:
 
   source: /_bibliography/
   bibliography: papers.bib
-  bibliography_template: bib
+  bibliography_template: bib-card
   # Note: if you have latex math in your bibtex, the latex filter
   # preprocessing may conflict with MathJAX if the latter is enabled.
   # See https://github.com/alshedivat/al-folio/issues/357.
@@ -339,6 +339,7 @@ filtered_bibtex_keywords:
     selected,
     slides,
     supp,
+    topics,
     video,
     website,
   ]
