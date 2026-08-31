@@ -1,7 +1,4 @@
 $(document).ready(function () {
-  const publicationCount = $(".publications ol.bibliography > li").length;
-  $("[data-publication-count]").text(publicationCount);
-
   $("[data-publication-toggle]").click(function () {
     const button = $(this);
     const card = button.closest(".publication-card");

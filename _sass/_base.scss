@@ -892,47 +892,6 @@ footer.sticky-bottom {
 }
 
 .publications {
-  .publications-intro {
-    background: linear-gradient(135deg, var(--global-card-bg-color), var(--global-bg-color));
-    border: 1px solid var(--global-divider-color);
-    border-radius: 14px;
-    margin-bottom: 1.5rem;
-    padding: 1.25rem 1.5rem;
-  }
-
-  .publications-intro__eyebrow {
-    color: var(--global-theme-color);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    margin: 0 0 0.35rem;
-    text-transform: uppercase;
-  }
-
-  .publications-intro__summary {
-    color: var(--global-text-color-light);
-    font-size: 1rem;
-    line-height: 1.6;
-    margin: 0;
-
-    strong {
-      color: var(--global-text-color);
-    }
-  }
-
-  .bibsearch-form-input {
-    border-color: var(--global-divider-color);
-    border-radius: 999px;
-    margin: 0 0 1rem;
-    max-width: none;
-    padding: 0.65rem 1rem;
-
-    &:focus {
-      border-color: var(--global-theme-color);
-      box-shadow: 0 0 0 3px rgba($purple-color, 0.12);
-    }
-  }
-
   h2.bibliography {
     border-top: 0;
     color: var(--global-text-color-light);
@@ -1193,7 +1152,6 @@ footer.sticky-bottom {
 
 @media (max-width: 576px) {
   .publications {
-    .publications-intro,
     .publication-card {
       border-radius: 10px;
       padding: 1rem;
@@ -1227,8 +1185,6 @@ footer.sticky-bottom {
 
 @media print {
   .publications {
-    .publications-intro,
-    .bibsearch-form-input,
     .publication-actions {
       display: none;
     }
