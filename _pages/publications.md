@@ -7,5 +7,7 @@ nav: true
 nav_order: 2
 ---
 
-{% include bib_search.liquid %}
-{% bibliography %}
+<div class="publications">
+  {% include bib_search.liquid %}
+  {% bibliography %}
+</div>
