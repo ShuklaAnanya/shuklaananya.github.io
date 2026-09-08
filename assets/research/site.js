@@ -6,7 +6,7 @@
     const label = `Switch to ${dark ? "light" : "dark"} theme`;
     themeButton.setAttribute("aria-label", label);
     themeButton.title = label;
-    document.querySelector('meta[name="theme-color"]').content = dark ? "#101715" : "#ffffff";
+    document.querySelector('meta[name="theme-color"]').content = dark ? "#0a0a0a" : "#ffffff";
   }
   themeButton.hidden = false;
   updateThemeButton();
@@ -47,6 +47,9 @@
   const sections = links.map((link) => document.getElementById(link.dataset.section)).filter(Boolean);
   let pending = false;
   function updateActiveSection() {
+    const distance = document.documentElement.scrollHeight - window.innerHeight;
+    document.querySelector(".reading-progress span").style.transform =
+      `scaleX(${distance > 0 ? Math.min(1, Math.max(0, window.scrollY / distance)) : 0})`;
     let active = null;
     for (const section of sections) {
       if (section.getBoundingClientRect().top <= 140) active = section.id;
@@ -71,5 +74,7 @@
     { passive: true }
   );
   window.addEventListener("resize", updateActiveSection);
+  document.querySelector(".news-archive")?.addEventListener("toggle", updateActiveSection);
+  new ResizeObserver(updateActiveSection).observe(document.body);
   updateActiveSection();
 })();

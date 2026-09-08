@@ -1,12 +1,10 @@
-- label: News
-  id: news
 - label: Experience
   id: experience
 - label: Publications
   id: publications
 - label: Talks
   id: talks
-- label: Education
-  id: education
 - label: Services
   id: services
+- label: Education
+  id: education

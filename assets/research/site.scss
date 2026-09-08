@@ -21,13 +21,13 @@
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --canvas: #101715;
-  --ink: #f4f7f5;
-  --muted: #bac7c1;
-  --faint: #99ada3;
-  --line: #2c3b34;
+  --canvas: #0a0a0a;
+  --ink: #f5f5f5;
+  --muted: #bfbfbf;
+  --faint: #a3a3a3;
+  --line: #2d2d2d;
   --accent: #71d4bf;
-  --surface: #19251f;
+  --surface: #181818;
   --selection: #285549;
 }
 * {
@@ -95,7 +95,7 @@ main:focus {
   outline: none;
 }
 .container {
-  width: min(100% - 48px, 860px);
+  width: min(100% - 48px, 720px);
   margin-inline: auto;
 }
 .icon {
@@ -925,5 +925,208 @@ h3 {
   .contact-links a,
   .paper-links a {
     min-height: 36px;
+  }
+}
+
+/* Second design pass: personal heading, circular portrait and institution marks. */
+@font-face {
+  font-family: "Google Sans";
+  src: url("{{ '/assets/research/GoogleSans-name.woff2' | relative_url }}") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+#profile-title {
+  font-family: "Google Sans", Inter, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+.navigation {
+  justify-content: flex-end;
+}
+.reading-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  pointer-events: none;
+}
+.reading-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.portrait-frame {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.portrait-frame .portrait {
+  position: absolute;
+  width: 220%;
+  height: auto;
+  max-width: none;
+  left: -51%;
+  top: -106%;
+  border-radius: 0;
+}
+.institution-heading {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+.institution-heading h3 {
+  margin: 0;
+}
+.org-logo {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 5px;
+  padding: 6px;
+}
+.org-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.positions-grouped {
+  margin-left: 5px;
+  padding-left: 23px;
+  border-left: 1px solid var(--line);
+}
+.positions-grouped .position {
+  position: relative;
+}
+.positions-grouped .position::before {
+  content: "";
+  position: absolute;
+  left: -27px;
+  top: 9px;
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--canvas);
+}
+.positions-grouped .position + .position {
+  border-top: 0;
+  margin-top: 22px;
+  padding-top: 0;
+}
+.icon-entry {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  gap: 16px;
+}
+.entry-icon {
+  color: var(--accent);
+  padding-top: 2px;
+}
+.entry-icon .icon {
+  width: 23px;
+  height: 23px;
+}
+.talk-date {
+  margin: 12px 0 0;
+}
+.education-entry {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 24px;
+}
+.education-entry .date {
+  margin-right: 0;
+}
+@media (max-width: 800px) {
+  .navigation-actions {
+    margin-left: auto;
+  }
+}
+@media (max-width: 540px) {
+  .portrait-frame {
+    grid-row: 1;
+    width: 156px;
+    height: 156px;
+  }
+  .hero-heading {
+    gap: 26px;
+  }
+  .institution-heading {
+    gap: 15px;
+  }
+  .org-logo {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+  }
+  .education-entry {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 15px;
+  }
+  .icon-entry {
+    grid-template-columns: 20px 1fr;
+    gap: 12px;
+  }
+  .entry-icon .icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.org-logo img[src$="hms.png"] {
+  object-fit: cover;
+}
+@media (min-width: 541px) and (max-width: 800px) {
+  .hero-heading {
+    grid-template-columns: 1fr 180px;
+  }
+}
+
+/* Institution marks lead each entry, sharing the reference's compact alignment. */
+.institution {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.institution-content {
+  min-width: 0;
+}
+.education-entry {
+  gap: 20px;
+  align-items: start;
+}
+@media (max-width: 540px) {
+  .institution {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 14px;
+  }
+  .education-entry {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 14px;
+  }
+  .org-logo {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+    padding: 4px;
+  }
+  .positions-grouped {
+    padding-left: 17px;
+  }
+  .positions-grouped .position::before {
+    left: -21px;
   }
 }

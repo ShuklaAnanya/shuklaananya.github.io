@@ -4,10 +4,15 @@
     <h2 id="education-title">Education</h2>
   </header>
   {% assign education = site.data.academic.education %}
-  <div class="position-heading">
-    <h3>{{ education.institution }}</h3>
-    <span class="date">{{ education.period }}</span>
+  <div class="education-entry">
+    {% include research/org-logo.liquid logo=education.logo %}
+    <div>
+      <div class="position-heading">
+        <h3>{{ education.institution }}</h3>
+        <span class="date">{{ education.period }}</span>
+      </div>
+      <p class="degree">{{ education.degree }}</p>
+      <p class="coursework"><span>Coursework</span> {{ education.coursework | join: ', ' }}</p>
+    </div>
   </div>
-  <p class="degree">{{ education.degree }}</p>
-  <p class="coursework"><span>Coursework</span> {{ education.coursework | join: ', ' }}</p>
 </section>

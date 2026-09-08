@@ -7,12 +7,11 @@ permalink: /
 <section class="hero" id="top" aria-labelledby="profile-title">
   <div class="hero-heading">
     <div>
-      <p class="eyebrow">Microsoft · M365 Copilot</p>
       <h1 id="profile-title">Ananya Shukla</h1>
       <p class="hero-role">Research Fellow <span class="role-separator">@</span> Microsoft M365 Copilot</p>
       <p class="location">{% include research/icon.liquid name='pin' %} {{ site.data.profile.location }}</p>
     </div>
-    <img class="portrait" src="{{ site.data.profile.portrait | relative_url }}" alt="Ananya Shukla" width="960" height="1280" fetchpriority="high">
+    <div class="portrait-frame"><img class="portrait" src="{{ site.data.profile.portrait | relative_url }}" alt="Ananya Shukla" width="960" height="1280" fetchpriority="high"></div>
   </div>
   <div class="biography">
     <p>I am a Research Fellow with the M365 Copilot team at Microsoft, working on <strong>Self-Evolving Agents</strong> and <strong>Recursive Self-Improvement</strong>.</p>
@@ -28,5 +27,5 @@ permalink: /
 {% include research/experience.liquid %}
 {% include research/publications.liquid %}
 {% include research/talks.liquid %}
-{% include research/education.liquid %}
 {% include research/services.liquid %}
+{% include research/education.liquid %}

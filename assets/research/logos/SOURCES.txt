@@ -1,0 +1,18 @@
+Institution marks are used to identify the listed research affiliations.
+
+Microsoft: https://commons.wikimedia.org/wiki/File:Microsoft_logo.svg
+Asset: https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg
+Harvard Medical School: https://logos-world.net/harvard-medical-school-logo/
+Asset: https://logos-world.net/wp-content/uploads/2024/12/Harvard-Medical-School-Logo-500x281.png
+IISc: https://www.iisc.ac.in/iisc-logo/
+Asset: https://iisc.ac.in/wp-content/uploads/2018/03/IISc-logo.jpg
+Brown: https://www.brown.edu/
+Asset: https://www.brown.edu/themes/custom/brown/static/images/logo.svg
+The complete logo symbol is exported as a standalone SVG without changing its viewBox or paths.
+Plaksha: official university coloured mark
+Asset: https://plaksha.edu.in/assets/logo-green.png
+
+Google Sans name subset: Google Fonts CSS API, weight 700, text Ananya Shukla.
+Source: https://github.com/googlefonts/googlesans
+License: ../GoogleSans-LICENSE.txt
+The name subset is converted from TTF to WOFF2 for local serving.

@@ -4,13 +4,16 @@
     <h2 id="services-title">Services</h2>
   </header>
   {% for service in site.data.academic.services %}
-    <div class="service-group">
-      <h3>{{ service.title }}</h3>
-      <ul>
-        {% for item in service.items %}
-          <li>{{ item }}</li>
-        {% endfor %}
-      </ul>
+    <div class="service-group icon-entry">
+      <span class="entry-icon">{% include research/icon.liquid name=service.icon %}</span>
+      <div>
+        <h3>{{ service.title }}</h3>
+        <ul>
+          {% for item in service.items %}
+            <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   {% endfor %}
 </section>

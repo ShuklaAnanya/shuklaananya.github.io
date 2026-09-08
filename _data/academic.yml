@@ -3,13 +3,14 @@ talks:
     datetime: "2025-09-25T11:00:00+09:00"
     date: September 25, 2025
     time: 11:00 AM KST
-    type: Main Conference Poster
-    venue: MICCAI 2025 — Poster Session 2
+    venue: MICCAI 2025
+    session: Poster Session 2
     topic: Detection, Segmentation, and Registration
     poster: Poster A227
     location: Daejeon, Republic of Korea
 education:
   institution: Plaksha University
+  logo: /assets/research/logos/plaksha-colour.png
   period: 2022–2026
   degree: B.Tech in Computer Science and Artificial Intelligence
   coursework:
@@ -19,9 +20,11 @@ education:
     - Reasoning in LLMs
 services:
   - title: Conference Reviewer
+    icon: review
     items:
       - Medical Image Computing and Computer Assisted Intervention Society (MICCAI) 2026
   - title: Workshop Organization
+    icon: community
     items:
-      - Core Organizing Committee — Conference on AI (ConfAI) at Plaksha University, 2025
-      - Organizing Committee — Conference on AI (ConfAI) at Plaksha University, 2023
+      - Core Organizing Committee - Conference on AI (ConfAI) at Plaksha University, 2025
+      - Organizing Committee - Conference on AI (ConfAI) at Plaksha University, 2023
