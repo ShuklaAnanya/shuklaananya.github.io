@@ -48,7 +48,9 @@
         <a href="{{ entry.website }}">{% include research/icon.liquid name='globe' %} Project Page</a>
       {%- endif %}
       {% if entry.code -%}
-        <a href="{{ entry.code }}">{% include research/icon.liquid name='github' %} GitHub</a>
+        <a href="{{ entry.code }}">
+          {%- include research/icon.liquid name='github' %} GitHub{% if entry.code_private == 'true' %} (private){% endif -%}
+        </a>
       {%- endif %}
     </div>
   {% endif %}
