@@ -1,10 +1,26 @@
 <section class="section" id="talks" aria-labelledby="talks-title">
-  <header class="section-heading"><p class="eyebrow">Sharing research</p><h2 id="talks-title">Talks &amp; Presentations</h2></header>
-  {% for talk in site.data.academic.talks %}<article class="talk">
-    <p class="talk-date"><time datetime="{{ talk.datetime }}">{{ talk.date }} <span class="separator"> · </span> {{ talk.time }}</time></p>
-    <h3>{{ talk.title }}</h3>
-    <p class="talk-venue">{{ talk.type }} <span class="separator"> · </span> {{ talk.venue }}</p>
-    <p class="muted">{{ talk.topic }}</p>
-    <p class="talk-location">{{ talk.poster }} <span class="separator"> · </span> {{ talk.location }}</p>
-  </article>{% endfor %}
+  <header class="section-heading">
+    <p class="eyebrow">Sharing research</p>
+    <h2 id="talks-title">Talks &amp; Presentations</h2>
+  </header>
+  {% for talk in site.data.academic.talks %}
+    <article class="talk">
+      <p class="talk-date">
+        <time datetime="{{ talk.datetime }}">
+          {{- talk.date }}
+          <span class="separator"> · </span> {{ talk.time -}}
+        </time>
+      </p>
+      <h3>{{ talk.title }}</h3>
+      <p class="talk-venue">
+        {{ talk.type }}
+        <span class="separator"> · </span> {{ talk.venue }}
+      </p>
+      <p class="muted">{{ talk.topic }}</p>
+      <p class="talk-location">
+        {{ talk.poster }}
+        <span class="separator"> · </span> {{ talk.location }}
+      </p>
+    </article>
+  {% endfor %}
 </section>

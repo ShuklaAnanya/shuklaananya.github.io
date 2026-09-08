@@ -1,1 +1,4 @@
-<li class="news-row"><time datetime="{{ include.item.date }}">{{ include.item.date | append: '-01' | date: '%b %Y' }}</time><div>{{ include.item.text | markdownify }}</div></li>
+<li class="news-row">
+  <time datetime="{{ include.item.date }}">{{ include.item.date | append: '-01' | date: '%b %Y' }}</time>
+  <div>{{ include.item.text | markdownify }}</div>
+</li>

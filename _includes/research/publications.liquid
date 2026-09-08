@@ -1,4 +1,11 @@
 <section class="section" id="publications" aria-labelledby="publications-title">
-  <header class="section-heading"><p class="eyebrow">Peer-reviewed &amp; under review</p><h2 id="publications-title">Publications</h2></header>
+  <header class="section-heading">
+    <p class="eyebrow">Peer-reviewed &amp; under review</p>
+    {% if include.standalone %}
+      <h1 id="publications-title" class="publications-page-title">Publications</h1>
+    {% else %}
+      <h2 id="publications-title">Publications</h2>
+    {% endif %}
+  </header>
   <div class="publications">{% bibliography %}</div>
 </section>

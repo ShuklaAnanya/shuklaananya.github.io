@@ -3,6 +3,7 @@ layout: research
 title: About
 permalink: /
 ---
+
 <section class="hero" id="top" aria-labelledby="profile-title">
   <div class="hero-heading">
     <div>

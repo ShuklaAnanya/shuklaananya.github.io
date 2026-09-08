@@ -2,5 +2,9 @@
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.10.0",
     "prettier": "^3.8.0"
+  },
+  "scripts": {
+    "format:check": "prettier --check _config.yml \"_data/{academic,experience,navigation,news,profile}.yml\" \"_includes/research/*.liquid\" \"_layouts/research*.liquid\" \"_pages/{about,404,cv,news,publications}.md\" \"assets/research/*.{js,scss}\" .github/workflows/jekyll.yml .github/workflows/prettier.yml .github/workflows/lighthouse-badger.yml DESIGN.md",
+    "check:js": "node --check assets/research/site.js"
   }
 }

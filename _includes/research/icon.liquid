@@ -1,16 +1,28 @@
-<svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-{% case include.name %}
-{% when 'email' %}<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>
-{% when 'scholar' %}<path d="m2 9 10-6 10 6-10 6zM6 12v6c4 3 8 3 12 0v-6M22 9v8"/>
-{% when 'github' %}<path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.2-2-1-2 3-.4 6-1.5 6-6 0-1.4-.5-2.6-1.3-3.5.1-.4.6-1.8-.2-3.5 0 0-1.1-.4-3.6 1.3a12 12 0 0 0-6 0C6.4 2.6 5.3 3 5.3 3c-.8 1.7-.3 3.1-.2 3.5C4.3 7.4 4 8.6 4 10c0 4.5 3 5.6 6 6-.8.5-1 1.5-1 2v4"/>
-{% when 'linkedin' %}<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7h.01M11 17v-7m0 3c0-4 6-4 6 0v4"/>
-{% when 'pin' %}<path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/>
-{% when 'paper' %}<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h6"/>
-{% when 'globe' %}<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>
-{% when 'moon' %}<path d="M21 13A9 9 0 0 1 11 3a7 7 0 0 0 10 10Z"/>
-{% when 'sun' %}<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1 1M18 18l1 1M5 19l1-1M18 6l1-1"/>
-{% when 'menu' %}<path d="M4 6h16M4 12h16M4 18h16"/>
-{% when 'arrow-up' %}<path d="m6 10 6-6 6 6M12 4v16"/>
-{% when 'chevron' %}<path d="m6 9 6 6 6-6"/>
-{% endcase %}
+<svg
+  class="icon"
+  width="16"
+  height="16"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.6"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"
+>
+  {% case include.name %}
+  {% when 'email' %}<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>
+  {% when 'scholar' %}<path d="m2 9 10-6 10 6-10 6zM6 12v6c4 3 8 3 12 0v-6M22 9v8"/>
+  {% when 'github' %}<path d="M9 19c-4 1-4-2-6-2m12 5v-4c0-1-.2-2-1-2 3-.4 6-1.5 6-6 0-1.4-.5-2.6-1.3-3.5.1-.4.6-1.8-.2-3.5 0 0-1.1-.4-3.6 1.3a12 12 0 0 0-6 0C6.4 2.6 5.3 3 5.3 3c-.8 1.7-.3 3.1-.2 3.5C4.3 7.4 4 8.6 4 10c0 4.5 3 5.6 6 6-.8.5-1 1.5-1 2v4"/>
+  {% when 'linkedin' %}<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7h.01M11 17v-7m0 3c0-4 6-4 6 0v4"/>
+  {% when 'pin' %}<path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2"/>
+  {% when 'paper' %}<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h6"/>
+  {% when 'globe' %}<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18"/>
+  {% when 'moon' %}<path d="M21 13A9 9 0 0 1 11 3a7 7 0 0 0 10 10Z"/>
+  {% when 'sun' %}<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1 1M18 18l1 1M5 19l1-1M18 6l1-1"/>
+  {% when 'menu' %}<path d="M4 6h16M4 12h16M4 18h16"/>
+  {% when 'arrow-up' %}<path d="m6 10 6-6 6 6M12 4v16"/>
+  {% when 'chevron' %}<path d="m6 9 6 6 6-6"/>
+  {% endcase %}
 </svg>

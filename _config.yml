@@ -29,6 +29,9 @@ exclude:
   - _pages/repositories.md
   - _pages/teaching.md
   - assets/css
+  - assets/fonts
+  - assets/img
+  - assets/plotly
   - assets/js
   - assets/json
   - assets/jupyter
