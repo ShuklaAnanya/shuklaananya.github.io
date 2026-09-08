@@ -1,0 +1,4 @@
+<section class="section" id="services" aria-labelledby="services-title">
+  <header class="section-heading"><p class="eyebrow">Research community</p><h2 id="services-title">Services</h2></header>
+  {% for service in site.data.academic.services %}<div class="service-group"><h3>{{ service.title }}</h3><ul>{% for item in service.items %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endfor %}
+</section>

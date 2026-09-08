@@ -1,0 +1,17 @@
+<section class="section" id="experience" aria-labelledby="experience-title">
+  <header class="section-heading"><p class="eyebrow">Research positions</p><h2 id="experience-title">Experience</h2></header>
+  <ol class="experience-list">
+    {% for institution in site.data.experience %}
+    <li class="institution">
+      <h3>{{ institution.institution }}</h3>
+      {% for role in institution.roles %}
+      <div class="position">
+        <div class="position-heading"><p class="position-title">{{ role.title }}</p><span class="date">{{ role.period }}</span></div>
+        <p class="team">{{ role.team }}</p>
+        <p class="position-details">{% for supervisor in role.supervisors %}{% if supervisor.url %}<a href="{{ supervisor.url }}">{{ supervisor.name }}</a>{% else %}{{ supervisor.name }}{% endif %}{% unless forloop.last %} &amp; {% endunless %}{% endfor %}{% if role.location %}<span class="separator"> · </span><span>{{ role.location }}</span>{% endif %}</p>
+      </div>
+      {% endfor %}
+    </li>
+    {% endfor %}
+  </ol>
+</section>

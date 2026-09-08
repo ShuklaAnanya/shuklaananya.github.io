@@ -1,12 +1,6 @@
 ---
-layout: page
-permalink: /publications/
+layout: research
 title: Publications
-description: Publications by categories in reversed chronological order.
-nav: true
-nav_order: 2
+permalink: /publications/
 ---
-
-<div class="publications">
-  {% bibliography %}
-</div>
+<div id="top" class="standalone">{% include research/publications.liquid %}</div>

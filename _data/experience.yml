@@ -1,0 +1,39 @@
+- institution: Microsoft
+  roles:
+    - title: Research Fellow
+      team: M365 Copilot
+      period: Sep 2026 – Present
+      location: Bengaluru, India
+      supervisors:
+        - name: Tanuja Ganu
+          url: https://www.microsoft.com/en-us/research/people/taganu/
+    - title: Research Intern
+      team: Microsoft Research
+      period: Jan 2026 – Aug 2026
+      location: Bengaluru, India
+      supervisors:
+        - name: Dr Mercy Ranjit
+          url: https://www.microsoft.com/en-us/research/people/meranjit/
+- institution: Harvard Medical School
+  roles:
+    - title: Research Intern
+      team: Image, Informatics & Intelligence (i3) Lab
+      period: Aug 2025 – Dec 2025
+      supervisors:
+        - name: Dr Yangming Ou
+        - name: Dr Rina Bao
+- institution: Indian Institute of Science (IISc)
+  roles:
+    - title: Research Intern
+      team: Biomolecular Computation Lab
+      period: Jun 2025 – Aug 2025
+      location: Bengaluru, India
+      supervisors:
+        - name: Dr Debnath Pal
+- institution: Brown University
+  roles:
+    - title: Research Intern
+      team: Rubenstein Lab
+      period: Jun 2024 – Oct 2024
+      supervisors:
+        - name: Dr Brenda Rubenstein

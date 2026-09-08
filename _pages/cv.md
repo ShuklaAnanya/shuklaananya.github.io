@@ -1,11 +1,12 @@
 ---
-layout: cv
+layout: research
+title: Curriculum Vitae
 permalink: /cv/
-title: cv
-nav: false
-nav_order: 5
-cv_pdf: /assets/pdf/example_pdf.pdf # you can also use external links here
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
-toc:
-  sidebar: left
 ---
+<div id="top" class="standalone"><h1 class="archive-title">Curriculum Vitae</h1><p>Ananya Shukla · <a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a></p>
+{% include research/experience.liquid %}
+{% include research/education.liquid %}
+{% include research/publications.liquid %}
+{% include research/talks.liquid %}
+{% include research/services.liquid %}
+</div>

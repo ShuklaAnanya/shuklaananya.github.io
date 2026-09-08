@@ -1,0 +1,27 @@
+talks:
+  - title: Spatial Prior-Guided Boundary and Region-Aware 2D Lesion Segmentation in Neonatal Hypoxic Ischemic Encephalopathy
+    datetime: "2025-09-25T11:00:00+09:00"
+    date: September 25, 2025
+    time: 11:00 AM KST
+    type: Main Conference Poster
+    venue: MICCAI 2025 — Poster Session 2
+    topic: Detection, Segmentation, and Registration
+    poster: Poster A227
+    location: Daejeon, Republic of Korea
+education:
+  institution: Plaksha University
+  period: 2022–2026
+  degree: B.Tech in Computer Science and Artificial Intelligence
+  coursework:
+    - Deep Learning
+    - Machine Learning Systems
+    - Machine Learning & Pattern Recognition
+    - Reasoning in LLMs
+services:
+  - title: Conference Reviewer
+    items:
+      - Medical Image Computing and Computer Assisted Intervention Society (MICCAI) 2026
+  - title: Workshop Organization
+    items:
+      - Core Organizing Committee — Conference on AI (ConfAI) at Plaksha University, 2025
+      - Organizing Committee — Conference on AI (ConfAI) at Plaksha University, 2023

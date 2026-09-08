@@ -1,0 +1,19 @@
+name: Ananya Shukla
+role: Research Fellow
+team: M365 Copilot
+organization: Microsoft
+location: Bengaluru, India
+email: shukla_ananya@outlook.com
+portrait: /assets/img/prof_pic_ananya.jpeg
+links:
+  - label: Google Scholar
+    icon: scholar
+    url: https://scholar.google.com/citations?user=YPeRWRgAAAAJ&hl=en
+  - label: GitHub
+    icon: github
+    url: https://github.com/ShuklaAnanya
+  - label: LinkedIn
+    icon: linkedin
+    url: https://www.linkedin.com/in/-ananya-shukla/
+# Add interests here when finalized. Empty interests are not rendered.
+interests: []

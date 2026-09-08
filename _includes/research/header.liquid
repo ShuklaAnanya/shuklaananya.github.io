@@ -1,0 +1,15 @@
+<header class="site-header">
+  <nav class="container navigation" aria-label="Main navigation">
+    <a class="wordmark" href="{{ '/' | relative_url }}#top"><span aria-hidden="true" class="wordmark-mark">/</span> Ananya Shukla</a>
+    <div class="navigation-actions">
+      <button class="menu-toggle icon-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation-links" hidden>{% include research/icon.liquid name='menu' %}</button>
+      <button class="theme-toggle icon-button" type="button" aria-label="Switch to dark theme" title="Switch to dark theme" hidden>
+        <span class="moon">{% include research/icon.liquid name='moon' %}</span>
+        <span class="sun">{% include research/icon.liquid name='sun' %}</span>
+      </button>
+    </div>
+    <ul id="navigation-links" class="navigation-links">
+      {% for item in site.data.navigation %}<li><a href="{{ '/' | relative_url }}#{{ item.id }}" data-section="{{ item.id }}">{{ item.label }}</a></li>{% endfor %}
+    </ul>
+  </nav>
+</header>

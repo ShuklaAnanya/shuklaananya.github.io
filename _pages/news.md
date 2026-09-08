@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: research
 title: News
 permalink: /news/
 ---
-
-{% include news.liquid %}
+<div id="top" class="standalone"><h1 class="archive-title">News</h1>{% include research/news.liquid expanded=true %}</div>
