@@ -2,9 +2,9 @@
 
 Approved direction: a compact, single-page research website informed by Amol Harsh's typography, section rhythm, and publication lists. Jekyll remains the static generator; this site uses a dedicated Liquid layout within the existing al-folio repository.
 
-- Order: Profile, News, Experience, Publications, Talks & Presentations, Education, Services.
+- Order: Profile, News, Experience, Publications, Talks & Presentations, Services, Education.
 - Deep green-teal (#087f73) complements the existing portrait. Dark mode uses #71d4bf on #101715. Light mode is the first-visit default.
-- Inter is served locally as a Latin subset under its SIL Open Font License. The original font remains in source; only the subset ships. SVG icons need no icon font or library.
+- The name uses a locally served Google Sans Bold subset. Body text uses Inter, served locally as a Latin subset under its SIL Open Font License. The original font remains in source; only the subset ships. SVG icons need no icon font or library.
 - Content remains visible without JavaScript. JavaScript adds the theme switch, mobile menu, and active section indicator. Native details/summary expands older news.
 - No fabricated interests, publication metadata, or links. Papers come from the existing bibliography, and FastConformation is labeled as a preprint.
 - Existing /publications/, /news/, and /cv/ URLs use the same components. Template demos stay in source and are excluded from publication.
@@ -51,3 +51,23 @@ This checks light/dark, mobile/desktop, navigation, disclosure, theme persistenc
 - Formatting and JavaScript syntax checks pass. The optional published-site Lighthouse workflow now audits the correct site without committing report files.
 
 Screenshots and machine-readable audit reports from this run are in `/tmp/ananya-site-review`. The local preview is served at `http://127.0.0.1:4000` while its server process is running. Publishing requires pushing the commits to GitHub; this implementation does not push automatically.
+
+## Requested refinements — September 8, 2026
+
+Removed the header wordmark, the repeated Microsoft eyebrow, and News from navigation. The name now uses Google Sans Bold (700), with a 1.8KB local WOFF2 subset and its OFL license. The original 960×1280 portrait is framed as a face-focused circle using CSS; no image pixels were changed.
+
+News uses sentence case while retaining proper names and acronyms; ReXGroundingCT Challenge is linked. Experience has institution marks on the right, with one Microsoft mark and an indented line joining its two roles. Logo source details are in `assets/research/logos/SOURCES.txt`; white backgrounds keep dark marks legible in either theme, and the Plaksha white mark uses charcoal.
+
+Added all three supplied GitHub links, labeling GuideAI as private, and Brenda Rubenstein's profile. Talks now place title first, followed by date/time, session/topic, and poster/location. Services immediately follows Talks, uses review/organization icons, and uses ordinary hyphens in committee descriptions. Education includes the Plaksha mark. A two-pixel scroll progress indicator updates on scroll, resize, and news expansion.
+
+Rebuilt and visually checked desktop, tablet, and mobile in both themes. Updated browser regression checks pass at 1440, 768, 390, and 320px, including progress completion, logo presence, grouped roles, private-repository labeling, and section order. Axe reports zero violations across all five pages in both themes. The earlier Lighthouse score records the first redesign milestone, before these refinements.
+
+### Review adjustment (approved design)
+
+Restored the original title-style capitalization in news, including Cognition-Aware Adaptive Learning and Spatial Prior-Guided Neonatal HIE Lesion Segmentation. Narrowed the centered reading column from 860px to 780px. Institution logos now lead Experience and Education entries on the left, aligned beside the text, with compact institution headings and the existing grouped Microsoft roles. This supersedes the earlier right-aligned logo and sentence-case choices.
+
+### Margin and dark-theme adjustment (approved design)
+
+The reading column is now 720px wide, matching the reference's effective text width and increasing horizontal whitespace (360px on each side of a 1440px screen). Small-screen gutters remain usable at 20px. Dark mode uses neutral #0a0a0a with neutral gray text, borders, and surfaces; teal remains the accent. Education uses Plaksha's official coloured logo on a white backing in both themes. These choices supersede earlier widths, tinted dark surfaces, and the white Plaksha mark.
+
+Brown now uses the complete official university logo, exported from its SVG sprite with the original viewBox and paths intact, replacing the shield-only favicon.
