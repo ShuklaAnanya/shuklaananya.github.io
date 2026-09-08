@@ -21,6 +21,17 @@ with sync_playwright() as p:
         page.evaluate('document.fonts.ready')
         assert page.locator('h1').inner_text() == 'Ananya Shukla'
         assert page.locator('.publication').count() == 4
+        assert page.locator('.wordmark').count() == 0
+        assert page.locator('[data-section="news"]').count() == 0
+        assert page.locator('.org-logo img').count() == 5
+        assert 'Google Sans' in page.locator('#profile-title').evaluate('(el) => getComputedStyle(el).fontFamily')
+        assert page.locator('.positions-grouped .position').count() == 2
+        assert page.locator('a', has_text='GitHub (private)').count() == 1
+        assert page.locator('#services').evaluate('(el) => el.compareDocumentPosition(document.querySelector("#education")) & Node.DOCUMENT_POSITION_FOLLOWING')
+        page.evaluate('window.scrollTo({top: document.body.scrollHeight, behavior: "instant"})')
+        page.wait_for_timeout(100)
+        assert page.locator('.reading-progress span').evaluate('(el) => getComputedStyle(el).transform') == 'matrix(1, 0, 0, 1, 0, 0)'
+        page.evaluate('window.scrollTo({top: 0, behavior: "instant"})')
         assert page.locator('.self-author').count() == 4
         assert page.locator('.news-row:visible').count() == 4
         assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), f'Overflow at {width}'
