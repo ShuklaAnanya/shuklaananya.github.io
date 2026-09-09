@@ -1130,3 +1130,29 @@ h3 {
     left: -21px;
   }
 }
+
+.publication-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 4px;
+}
+.publication-tags li {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--accent);
+}
+.talk-location a {
+  color: var(--accent);
+}
+.talk-location .icon {
+  width: 13px;
+  height: 13px;
+  vertical-align: -2px;
+  margin-right: 3px;
+}

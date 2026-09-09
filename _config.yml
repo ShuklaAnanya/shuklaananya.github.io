@@ -11,6 +11,7 @@ description: >-
 markdown: kramdown
 highlighter: rouge
 max_width: 720px
+show_publication_topics: false
 include: [_pages]
 # Keep template examples in source without publishing them as Ananya's work.
 exclude:

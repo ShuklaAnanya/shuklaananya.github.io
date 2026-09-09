@@ -7,10 +7,11 @@ talks:
     session: Poster Session 2
     topic: Detection, Segmentation, and Registration
     poster: Poster A227
+    poster_url: /assets/research/posters/miccai-2025.png
     location: Daejeon, Republic of Korea
 education:
   institution: Plaksha University
-  logo: /assets/research/logos/plaksha-colour.png
+  logo: /assets/research/logos/plaksha-symbol.png
   period: 2022–2026
   degree: B.Tech in Computer Science and Artificial Intelligence
   coursework:

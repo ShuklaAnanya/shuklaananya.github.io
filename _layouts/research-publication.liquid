@@ -31,7 +31,15 @@
       <span class="separator"> · </span><span class="distinction">{{ entry.award_name }}</span>
     {%- endif %}
   </p>
-  {% if entry.html or entry.pdf or entry.doi or entry.arxiv or entry.website or entry.code %}
+  {% if site.show_publication_topics and entry.topics %}
+    <ul class="publication-tags" aria-label="Research topics">
+      {% assign topics = entry.topics | split: ';' %}
+      {% for topic in topics %}
+        <li>{{ topic | strip | escape }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% if entry.html or entry.pdf or entry.doi or entry.arxiv or entry.website or entry.code or entry.poster %}
     <div class="paper-links" aria-label="Links for {{ entry.title | escape }}">
       {% if entry.html -%}
         <a href="{{ entry.html }}">{% include research/icon.liquid name='paper' %} Paper</a>
@@ -46,6 +54,9 @@
       {%- endif %}
       {% if entry.website -%}
         <a href="{{ entry.website }}">{% include research/icon.liquid name='globe' %} Project Page</a>
+      {%- endif %}
+      {% if entry.poster -%}
+        <a href="{{ entry.poster | relative_url }}">{% include research/icon.liquid name='presentation' %} Poster</a>
       {%- endif %}
       {% if entry.code -%}
         <a href="{{ entry.code }}">

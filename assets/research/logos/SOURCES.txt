@@ -16,3 +16,8 @@ Google Sans name subset: Google Fonts CSS API, weight 700, text Ananya Shukla.
 Source: https://github.com/googlefonts/googlesans
 License: ../GoogleSans-LICENSE.txt
 The name subset is converted from TTF to WOFF2 for local serving.
+
+Updated logo choices (September 2026):
+plaksha-symbol.png: user-supplied images.png; original retained unchanged.
+brown-stacked.jpeg: user-supplied images.jpeg; original retained unchanged.
+Brown and Plaksha retain their original white backing in both themes for legibility.

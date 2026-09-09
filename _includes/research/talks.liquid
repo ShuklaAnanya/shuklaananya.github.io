@@ -19,7 +19,14 @@
           <span class="separator"> · </span> {{ talk.session }} - {{ talk.topic }}
         </p>
         <p class="talk-location">
-          {{ talk.poster }}
+          {% if talk.poster_url %}
+            <a href="{{ talk.poster_url | relative_url }}">
+              {%- include research/icon.liquid name='presentation' %}
+              {{ talk.poster -}}
+            </a>
+          {% else %}
+            {{ talk.poster }}
+          {% endif %}
           <span class="separator"> · </span> {{ talk.location }}
         </p>
       </div>

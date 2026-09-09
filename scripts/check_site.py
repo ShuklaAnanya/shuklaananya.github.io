@@ -13,7 +13,11 @@ class Document(HTMLParser):
         self.links = []
         self.errors = []
         self.h1 = 0
+        self.text_parts = []
         self.feed(path.read_text())
+
+    def handle_data(self, data):
+        self.text_parts.append(data)
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -54,7 +58,7 @@ home = ROOT / 'index.html'
 assert docs[home].h1 == 1, 'Homepage needs exactly one h1'
 for section in ('top', 'news', 'experience', 'publications', 'talks', 'education', 'services'):
     assert section in docs[home].ids, f'Missing section: {section}'
-text = home.read_text()
+text = ' '.join(''.join(docs[home].text_parts).split())
 for content in ('shukla_ananya@outlook.com', 'MedCompose-CT', 'Self-Evolving Agents', 'Recursive Self-Improvement', 'Poster A227', 'ConfAI', 'Preprint'):
     assert content in text, f'Missing content: {content}'
 for demo in ('Albert Einstein', 'My website is being developed', 'Paper Title'):
