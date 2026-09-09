@@ -21,9 +21,13 @@ with sync_playwright() as p:
         page.evaluate('document.fonts.ready')
         assert page.locator('h1').inner_text() == 'Ananya Shukla'
         assert page.locator('.publication').count() == 4
+        assert page.locator('.publication-tags').count() == 0
+        assert page.locator('.publication a', has_text='Poster').count() == 2
+        assert page.locator('#talks a', has_text='Poster').count() == 1
+        assert page.locator('#services-title').inner_text() == 'Academic Service'
         assert page.locator('.wordmark').count() == 0
         assert page.locator('[data-section="news"]').count() == 0
-        assert page.locator('.org-logo img').count() == 5
+        assert page.locator('.org-logo').count() == 5
         assert 'Google Sans' in page.locator('#profile-title').evaluate('(el) => getComputedStyle(el).fontFamily')
         assert page.locator('.positions-grouped .position').count() == 2
         assert page.locator('a', has_text='GitHub (private)').count() == 1
